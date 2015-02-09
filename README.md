@@ -5,7 +5,7 @@ This module adds transformation support for vector file types including SVG and 
 
 ### Announcement
 
-![](http://lxtest.se/files/.thumbs/blog_images/20150209_vector_transformations/720x400e/blog_image.006.jpg)
+![](http://loftux.se/files/.thumbs/blog_images/20150209_vector_transformations/720x400e/blog_image.006.jpg)
 
 For the official announcement from [Loftux AB](http://www.loftux.se?ref=avt-git), please see the following blog post.  
  
