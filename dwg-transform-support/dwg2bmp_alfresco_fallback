@@ -1,0 +1,34 @@
+#!/bin/bash +x 
+echo "****"
+DIR=${0%/*}
+echo "DIR: $DIR"
+
+cd $DIR
+pwd
+#binary="$DIR/qcad"
+binary="./qcad"
+echo "Binary: $binary"
+echo "Setting autostart script..."
+autostart="./scripts/Pro/Tools/Dwg2Bmp/Dwg2Bmp.js"
+#autostart="$DIR/scripts/Pro/Tools/Dwg2Bmp/Dwg2Bmp.js"
+echo "Autostart: $autostart"
+echo "Other params: $@"
+echo "****"
+echo "Dollar ZERO : $0"
+echo "****"
+
+#"$binary" -no-dock-icon -no-gui -allow-multiple-instances -autostart "$autostart" "$0" "$@"
+
+
+"$binary" -no-dock-icon -no-gui -allow-multiple-instances -enable-script-debugger -autostart "$autostart" "$0" "$1" "$2" -q 100 -r 10 -f "$3" | grep -q 'Conversion finished.'
+
+
+#"$binary" -no-dock-icon -no-gui -allow-multiple-instances -enable-script-debugger -autostart "$autostart" "$0" "$@"
+
+OUT=$?
+if [ $OUT -eq 0 ];then
+  echo "Actual image conversion completed with high quality."
+else
+  "$binary" -no-dock-icon -no-gui -allow-multiple-instances -enable-script-debugger -autostart "$autostart" "$0" "$1" "$2" -q 100 -f "$3" | grep -q 'Conversion finished.'
+  echo "Fallback image render completed."   
+fi

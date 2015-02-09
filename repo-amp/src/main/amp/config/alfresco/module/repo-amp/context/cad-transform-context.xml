@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE beans PUBLIC '-//SPRING//DTD BEAN//EN' 'http://www.springframework.org/dtd/spring-beans.dtd'>
+
+<beans>
+
+    <bean id="transformer.worker.Dwg2png" class="org.alfresco.repo.management.subsystems.SubsystemProxyFactory">
+        <property name="sourceApplicationContextFactory">
+            <ref bean="thirdparty" />
+        </property>
+        <property name="sourceBeanName">
+            <value>transformer.worker.Dwg2png</value>
+        </property>
+        <property name="interfaces">
+            <list>
+                <value>org.alfresco.repo.content.transform.ContentTransformerWorker</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="transformer.Dwg2png" class="org.alfresco.repo.content.transform.ProxyContentTransformer"
+          parent="baseContentTransformer">
+        <property name="worker">
+            <ref bean="transformer.worker.Dwg2png"/>
+        </property>
+    </bean>
+
+
+    <bean id="transformer.worker.Dwg2svg" class="org.alfresco.repo.management.subsystems.SubsystemProxyFactory">
+        <property name="sourceApplicationContextFactory">
+            <ref bean="thirdparty" />
+        </property>
+        <property name="sourceBeanName">
+            <value>transformer.worker.Dwg2svg</value>
+        </property>
+        <property name="interfaces">
+            <list>
+                <value>org.alfresco.repo.content.transform.ContentTransformerWorker</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="transformer.Dwg2svg" class="org.alfresco.repo.content.transform.ProxyContentTransformer"
+          parent="baseContentTransformer">
+        <property name="worker">
+            <ref bean="transformer.worker.Dwg2svg"/>
+        </property>
+    </bean>
+
+    <bean id="transformer.worker.Svg2png" class="org.alfresco.repo.management.subsystems.SubsystemProxyFactory">
+        <property name="sourceApplicationContextFactory">
+            <ref bean="thirdparty" />
+        </property>
+        <property name="sourceBeanName">
+            <value>transformer.worker.Svg2png</value>
+        </property>
+        <property name="interfaces">
+            <list>
+                <value>org.alfresco.repo.content.transform.ContentTransformerWorker</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="transformer.Svg2png" class="org.alfresco.repo.content.transform.ProxyContentTransformer"
+          parent="baseContentTransformer">
+        <property name="worker">
+            <ref bean="transformer.worker.Svg2png"/>
+        </property>
+    </bean>
+
+
+</beans>

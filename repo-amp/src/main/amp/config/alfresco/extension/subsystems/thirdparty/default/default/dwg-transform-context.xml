@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="transformer.worker.Dwg2png" class="org.alfresco.repo.content.transform.RuntimeExecutableContentTransformerWorker">
+        <property name="mimetypeService">
+            <ref bean="mimetypeService" />
+        </property>
+        <property name="checkCommand">
+            <bean class="org.alfresco.util.exec.RuntimeExec">
+                <property name="commandMap">
+                    <map>
+                        <entry key=".*">
+                            <value>${dwg-convert.exe} -l</value>
+                        </entry>
+                    </map>
+                </property>
+                <property name="errorCodes">
+                    <value>1</value>
+                </property>
+            </bean>
+        </property>
+        <property name="transformCommand">
+            <bean class="org.alfresco.util.exec.RuntimeExec">
+                <property name="commandMap">
+                    <map>
+                        <entry key=".*">
+                            <value>${dwg-convert.exe} -o ${target} ${source}</value>
+                        </entry>
+                    </map>
+                </property>
+                <property name="defaultProperties">
+                    <map>
+                        <entry key="flashVersion" value="9" />
+                    </map>
+                </property>
+                <property name="errorCodes">
+                    <value>1</value>
+                </property>
+            </bean>
+        </property>
+        <property name="explicitTransformations">
+            <list>
+                <bean class="org.alfresco.repo.content.transform.ExplictTransformationDetails">
+                    <property name="sourceMimetype">
+                        <value>application/vnd.dwg</value>
+                    </property>
+                    <property name="targetMimetype">
+                        <value>image/png</value>
+                    </property>
+                </bean>
+            </list>
+        </property>
+    </bean>
+    <bean id="transformer.worker.Dwg2svg" class="org.alfresco.repo.content.transform.RuntimeExecutableContentTransformerWorker">
+        <property name="mimetypeService">
+            <ref bean="mimetypeService" />
+        </property>
+        <property name="checkCommand">
+            <bean class="org.alfresco.util.exec.RuntimeExec">
+                <property name="commandMap">
+                    <map>
+                        <entry key=".*">
+                            <value>${dwg-svg-convert.exe} -l</value>
+                        </entry>
+                    </map>
+                </property>
+                <property name="errorCodes">
+                    <value>1</value>
+                </property>
+            </bean>
+        </property>
+        <property name="transformCommand">
+            <bean class="org.alfresco.util.exec.RuntimeExec">
+                <property name="commandMap">
+                    <map>
+                        <entry key=".*">
+                            <value>${dwg-svg-convert.exe} -o ${target} ${source}</value>
+                        </entry>
+                    </map>
+                </property>
+                <property name="defaultProperties">
+                    <map>
+                        <entry key="flashVersion" value="9" />
+                    </map>
+                </property>
+                <property name="errorCodes">
+                    <value>1</value>
+                </property>
+            </bean>
+        </property>
+        <property name="explicitTransformations">
+            <list>
+                <bean class="org.alfresco.repo.content.transform.ExplictTransformationDetails">
+                    <property name="sourceMimetype">
+                        <value>application/vnd.dwg</value>
+                    </property>
+                    <property name="targetMimetype">
+                        <value>image/svg+xml</value>
+                    </property>
+                </bean>
+            </list>
+        </property>
+    </bean>
+
+
+    <bean id="transformer.worker.Svg2png" class="org.alfresco.repo.content.transform.RuntimeExecutableContentTransformerWorker">
+        <property name="mimetypeService">
+            <ref bean="mimetypeService" />
+        </property>
+        <property name="checkCommand">
+            <bean class="org.alfresco.util.exec.RuntimeExec">
+                <property name="commandMap">
+                    <map>
+                        <entry key=".*">
+                            <value>${svg-png-convert.exe} --version</value>
+                        </entry>
+                    </map>
+                </property>
+                <property name="errorCodes">
+                    <value>1</value>
+                </property>
+            </bean>
+        </property>
+        <property name="transformCommand">
+            <bean class="org.alfresco.util.exec.RuntimeExec">
+                <property name="commandMap">
+                    <map>
+                        <entry key=".*">
+                            <value>${svg-png-convert.exe} -h 10000 ${source} -o ${target} </value>
+                        </entry>
+                    </map>
+                </property>
+                <property name="defaultProperties">
+                    <map>
+                        <entry key="flashVersion" value="9" />
+                    </map>
+                </property>
+                <property name="errorCodes">
+                    <value>1</value>
+                </property>
+            </bean>
+        </property>
+        <property name="explicitTransformations">
+            <list>
+                <bean class="org.alfresco.repo.content.transform.ExplictTransformationDetails">
+                    <property name="sourceMimetype">
+                        <value>image/svg+xml</value>
+                    </property>
+                    <property name="targetMimetype">
+                        <value>image/png</value>
+                    </property>
+                </bean>
+            </list>
+        </property>
+    </bean>
+
+</beans>
