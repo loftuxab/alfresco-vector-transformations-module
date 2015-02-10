@@ -32,6 +32,7 @@ For the official announcement from [Loftux AB](http://www.loftux.se?ref=avt-git)
         <version>1.0-SNAPSHOT</version>
         <type>amp</type>
     </dependency>  
+    ```
 
 * Add additional overlay configurations necessary based on the Maven archetype being in the project.
 
@@ -52,7 +53,7 @@ For the official announcement from [Loftux AB](http://www.loftux.se?ref=avt-git)
 	svg-png-convert.dir=/usr/local/bin
 	svg-png-convert.exe=${svg-png-convert.dir}/rsvg-convert
 	content.transformer.Svg2png.extensions.svg.png.supported=true
-
+	
 ###Frequently Asked Questions
 __How can I improve the quality of the transformations from DWG to PNG?__  
 You can try removing the direct transformation from DWG to PNG and creating DWG -> SVG -> PNG chain.
