@@ -1,7 +1,7 @@
 ## Alfresco Vector Transformations Module
 
 ### Introduction
-This module adds transformation support for vector file types including SVG and DWG (AutoCAD)
+This module adds transformation support for vector file types including SVG (Scalable Vector Graphics) and DWG (AutoCAD).
 
 ### Announcement
 
@@ -59,7 +59,9 @@ __How can I improve the quality of the transformations from DWG to PNG?__
 You can try removing the direct transformation from DWG to PNG and creating DWG -> SVG -> PNG chain.
 
 __Does[ Zoomable for Alfresco](https://loftux.com/en/blog/announcing-the-zoomable-image-viewer-for-alfresco) come bundled with this module?__  
-No. [Zoomable for Alfresco](https://loftux.com/en/products-and-add-ons/alfresco-add-ons/zoomable-for-alfresco) is not available with this module. For more information, please [contact](https://loftux.com/en/contact) Loftux AB.
+No. [Zoomable for Alfresco](https://loftux.com/en/products-and-add-ons/alfresco-add-ons/zoomable-for-alfresco) is not available with this module. However, Zoomable for Alfresco will include Alfresco Vector Transformations module.  
+
+For more information on Zoomable for Alfresco, please [contact](https://loftux.com/en/contact) Loftux AB.
 
 ### Contributing
 
@@ -76,6 +78,7 @@ Please see LICENSE.md
 
 ###Sponsored By
 
-Loftux AB [https://loftux.com](https://loftux.com/en/?ref=avt-github "loftux.com")
+Loftux AB (English) [https://loftux.com](https://loftux.com/en/?ref=avt-github "loftux.com") /
+Loftux AB (Swedish/Svenska) [https://loftux.se](https://loftux.se/?ref=avt-github "loftux.com")
 
-[![Loftux AB](https://loftux.se/themes/loftux_theme/assets/images/loftux-logo/logo-loftux-prefixed-small.png?ref=avt-github)](https://loftux.se?ref=avt-github)
+[![Loftux AB](https://loftux.se/themes/loftux_theme/assets/images/loftux-logo/logo-loftux-prefixed-small.png?ref=avt-github)](https://loftux.com?ref=avt-github)
