@@ -14,8 +14,6 @@ autostart="./scripts/Pro/Tools/Dwg2Svg/Dwg2Svg.js"
 echo "Autostart: $autostart"
 echo "Other params: $@"
 echo "****"
-echo "Dollar ZERO : $0"
-echo "****"
 
 #"$binary" -no-dock-icon -no-gui -allow-multiple-instances -autostart "$autostart" "$0" "$@"
 
