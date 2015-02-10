@@ -19,8 +19,5 @@
 <!DOCTYPE beans PUBLIC '-//SPRING//DTD BEAN//EN' 'http://www.springframework.org/dtd/spring-beans.dtd'>
 
 <beans>
-	
-    <import resource="classpath:alfresco/module/${artifactId}/context/service-context.xml" />
-    <import resource="classpath:alfresco/module/${artifactId}/context/cad-transform-context.xml" />
-
+	<import resource="classpath:alfresco/module/${artifactId}/context/cad-transform-context.xml" />
 </beans>
