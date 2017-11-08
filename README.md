@@ -76,7 +76,7 @@ Please see LICENSE.md
 ### Author
 - Bhagya Silva ([http://www.about.me/bhagyas](http://www.about.me/bhagyas)), Software Architect, Loftux AB ([http://www.loftux.com](http://www.loftux.com)).
 
-###Sponsored By
+### Sponsored By
 
 Loftux AB (English) [https://loftux.com](https://loftux.com/en/?ref=avt-github "loftux.com") /
 Loftux AB (Swedish/Svenska) [https://loftux.se](https://loftux.se/?ref=avt-github "loftux.com")
